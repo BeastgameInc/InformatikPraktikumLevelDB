@@ -73,6 +73,14 @@ public class MyJSONCaster {
 			f.set(target, jo.get(f.getName()));
 		}
 	}
+	
+	public static void readJSONIntoObject(JSONObject obj, Object target) throws JSONException, IOException, IllegalArgumentException, IllegalAccessException {
+		JSONObject jo = obj;
+		Field[] vars = target.getClass().getDeclaredFields();
+		for(Field f : vars) {
+			f.set(target, jo.get(f.getName()));
+		}
+	}
 
 	public static void main(String args[]) {
 
