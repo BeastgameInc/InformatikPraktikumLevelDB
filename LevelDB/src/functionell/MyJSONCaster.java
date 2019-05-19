@@ -14,28 +14,7 @@ import util.Primitives;
 
 public class MyJSONCaster {
 
-	public static JSONObject writeTestJSON(String filename) throws Exception{
-		JSONObject jo = new JSONObject();
-		jo.put("name", "Timon");
-		jo.put("age", 18);
-
-		JSONObject item = new JSONObject();
-		item.put("name", "Schlüssel");
-
-		jo.put("item", item);
-
-		JSONArray ja = new JSONArray();
-		ja.put("tag1");
-		ja.put("tag2");
-
-		jo.put("tags", ja);
-
-		Files.write(Paths.get(filename), jo.toString().getBytes());
-
-		return jo;
-
-	}
-
+	
 
 
 	/**
@@ -82,37 +61,8 @@ public class MyJSONCaster {
 		}
 	}
 
-	public static void main(String args[]) {
-
-
-		LevelInfoSTR test = new LevelInfoSTR("test", 11, 10, new JSONArray(), new JSONArray());
-		LevelInfoSTR testout = new LevelInfoSTR("");
-
-		try {
-			Files.write(Paths.get("testfile.json"), getJSONFromObject(test).toString().getBytes());
-			readJSONIntoObject("testfile.json", testout);
-
-			System.out.println(testout.toString());
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-
-
-
 	
 }
 
 
 
-}

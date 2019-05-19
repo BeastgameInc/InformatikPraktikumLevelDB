@@ -1,2 +1,2 @@
 # InformatikPraktikumLevelDB
-Informatik Projekt aud dem 2. Semester
+Informatik Projekt aus dem 2. Semester
