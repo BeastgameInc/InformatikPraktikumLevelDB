@@ -25,6 +25,12 @@ public class LevelEditorManager {
 		tile.setLayer(layerID);
 	}
 
+	/**
+	 * Loads all Tiles into a JSONArray
+	 * @return The finished Array
+	 * @throws IllegalArgumentException
+	 * @throws IllegalAccessException
+	 */
 	public JSONArray getJSONTiles() throws IllegalArgumentException, IllegalAccessException {
 		JSONArray ar = new JSONArray();
 		for(TileInfoSTR i : tiles) {
@@ -33,10 +39,20 @@ public class LevelEditorManager {
 		return ar;
 	}
 
+	/**
+	 * Uses this.cutSpritesheet to read an image from a file
+	 * @param URI The filepath to read the image from.
+	 * @throws IOException
+	 */
 	public void setSubSpritesFile(String URI) throws IOException {
 		subSprites = cutSpritesheet(ImageIO.read(new File(URI)));
 	}
 
+	/**
+	 * Cuts an image into multiple squares.
+	 * @param big The image to cut
+	 * @return All cut pieces
+	 */
 	public BufferedImage[] cutSpritesheet(BufferedImage big) {
 
 		int rows = (int) Math.ceil(big.getWidth() / (double) subimageSize);
