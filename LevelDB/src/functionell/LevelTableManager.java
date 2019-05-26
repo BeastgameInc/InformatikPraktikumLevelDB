@@ -101,6 +101,7 @@ public class LevelTableManager {
 			levelList.remove(i);
 		}
 		//TODO might cause error
+		
 	}
 
 }
