@@ -1,7 +1,15 @@
 package structs;
 
 public class TileInfoSTR {
+	
+	
 		
+		public TileInfoSTR(int x, int y, String layer) {
+		super();
+		this.x = x;
+		this.y = y;
+		Layer = layer;
+	}
 		private int x;
 		public int getX() {
 			return x;
