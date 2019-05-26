@@ -17,6 +17,10 @@ public class LevelEditorManager {
 	private int subimageSize;
 	private BufferedImage[] subSprites;
 	
+	public void addTile(TileInfoSTR t) {
+		tiles.add(t);
+	}
+	
 	public BufferedImage[] getsubSprites() {
 		return subSprites;
 	}
