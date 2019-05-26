@@ -10,7 +10,7 @@ public class TileInfoSTR {
 		this.y = y;
 		Layer = layer;
 	}
-		private int x;
+		public int x;
 		public int getX() {
 			return x;
 		}
@@ -35,9 +35,9 @@ public class TileInfoSTR {
 		public void setTileURI(String tileURI) {
 			TileURI = tileURI;
 		}
-		private int y;
-		private String Layer;
-		private String TileURI;
+		public int y;
+		public String Layer;
+		public String TileURI;
 		
 	
 }
