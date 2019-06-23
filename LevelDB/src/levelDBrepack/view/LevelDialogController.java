@@ -78,6 +78,9 @@ public class LevelDialogController {
 		} else {
 			try {
 				Integer.parseInt(heightField.getText());
+				if(Integer.parseInt(heightField.getText())<1) {
+					errorMessage += "Input must be at least 1!\n";
+				}
 			} catch (NumberFormatException e) {
 				errorMessage += "No valid height (must be an integer)!\n";
 			}

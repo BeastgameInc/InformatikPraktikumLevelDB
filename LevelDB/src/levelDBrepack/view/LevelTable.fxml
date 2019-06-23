@@ -10,7 +10,7 @@
       <ToolBar AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
         <items>
           <Button mnemonicParsing="false" onAction="#handleNewLevel" prefWidth="60.0" text="New..." />
-            <Button mnemonicParsing="false" onAction="#handleEditPerson" prefWidth="60.0" text="Edit..." />
+            <Button mnemonicParsing="false" onAction="#handleEditLevelProp" prefWidth="60.0" text="Edit..." />
             <Button mnemonicParsing="false" onAction="#handleDeleteLevel" prefWidth="60.0" text="Delete" />
         </items>
       </ToolBar>
@@ -25,5 +25,6 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Button layoutX="14.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleEditLevel" text="Edit Level..." AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
    </children>
 </AnchorPane>

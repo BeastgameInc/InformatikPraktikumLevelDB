@@ -67,20 +67,58 @@ public class LevelTableController {
 		LevelProp tempLevel = new LevelProp();
 		boolean okClicked = mainApp.showLevelEditDialog(tempLevel);
 		if(okClicked) {
-			mainApp.getLevelData().add(tempLevel);
+			if(!mainApp.idDuplicat(tempLevel))
+				mainApp.getLevelData().add(tempLevel);
+			else {
+				Alert alert = new Alert(AlertType.WARNING);
+		        alert.initOwner(mainApp.getPrimaryStage());
+		        alert.setTitle("ID Not unique");
+		        alert.setHeaderText("ID is not unique!");
+		        alert.setContentText("Please choose a different ID.");
+
+		        alert.showAndWait();
+			}
 		}
 	}
 	
 	@FXML
-	private void handleEditPerson() {
-		LevelProp selectedPerson = levelTable.getSelectionModel().getSelectedItem();
-	    if (selectedPerson != null) {
-	        boolean okClicked = mainApp.showLevelEditDialog(selectedPerson);
+	private void handleEditLevelProp() {
+		LevelProp selectedLevel = levelTable.getSelectionModel().getSelectedItem();
+	    if (selectedLevel != null) {
+	        boolean okClicked = mainApp.showLevelEditDialog(selectedLevel);
 	        if (okClicked) {
 	            //showLevelDetails(selectedPerson); //TODO see if mistake
+	        	if(mainApp.idDuplicat(selectedLevel)) {
+	        		selectedLevel.setID("#DUPLICATE");
+	        		Alert alert = new Alert(AlertType.WARNING);
+			        alert.initOwner(mainApp.getPrimaryStage());
+			        alert.setTitle("ID Not unique");
+			        alert.setHeaderText("ID is not unique!");
+			        alert.setContentText("Please choose a different ID.");
+
+			        alert.showAndWait();
+	        	}
+	        	
 	        }
 
 	    } else {
+	        // Nothing selected.
+	        Alert alert = new Alert(AlertType.WARNING);
+	        alert.initOwner(mainApp.getPrimaryStage());
+	        alert.setTitle("No Selection");
+	        alert.setHeaderText("No Level Selected");
+	        alert.setContentText("Please select a level.");
+
+	        alert.showAndWait();
+	    }
+	}
+	
+	@FXML
+	private void handleEditLevel() {
+		LevelProp selectedLevel = levelTable.getSelectionModel().getSelectedItem();
+		if(selectedLevel != null) {
+			mainApp.showLevelEditor(selectedLevel);
+		} else {
 	        // Nothing selected.
 	        Alert alert = new Alert(AlertType.WARNING);
 	        alert.initOwner(mainApp.getPrimaryStage());

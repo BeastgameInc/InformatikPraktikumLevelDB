@@ -105,6 +105,25 @@ public class MainApp extends Application {
 			return false;
 		}
 	}
-
+	
+	public void showLevelEditor(LevelProp level) {
+		
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/LevelEditor.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			Scene scene = new Scene(pane);
+			primaryStage.setScene(scene);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean idDuplicat(LevelProp level) {
+		for(LevelProp i : levelData) {
+			if(i.idEquals(level) && !i.equals(level)) return true;
+		} 
+		return false;
+	}
 	
 }

@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import structs.LevelInfoSTR;
 
 public class LevelProp {
 
@@ -12,14 +13,23 @@ public class LevelProp {
 	private IntegerProperty height;
 	private StringProperty props;
 	
+	private LevelInfoSTR levelSTR;
+	
 	public LevelProp(String id, int width, int height) {
 		this.id = new SimpleStringProperty(id);
 		this.width = new SimpleIntegerProperty(width);
 		this.height = new SimpleIntegerProperty(height);
 	}
 	
+	public LevelProp(LevelInfoSTR levelSTR) {
+		this.id.set(levelSTR.id);
+		this.width.set(levelSTR.width);
+		this.height.set(levelSTR.height);
+		this.props.set(levelSTR.getProps().toString());
+	}
+	
 	public LevelProp() {
-		this(null, 0, 0);
+		this(null, 1, 1);
 	}
 
 	public String getID() {
@@ -67,6 +77,10 @@ public class LevelProp {
 	
 	public StringProperty propsProperty() {
 		return props;
+	}
+	
+	public boolean idEquals(LevelProp level) {
+		return this.getID().equals(level.getID());
 	}
 	
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="levelDBrepack.view.LevelEditorController">
+   <children>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="50.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="645.0" prefWidth="890.0">
+               <children>
+                  <TilePane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button layoutX="14.0" layoutY="661.0" mnemonicParsing="false" text="Save and Back" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+      <Button layoutX="173.0" layoutY="665.0" mnemonicParsing="false" text="Clear All" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button layoutX="834.0" layoutY="14.0" mnemonicParsing="false" text="Open Tileset File..." AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <Label layoutX="35.0" layoutY="14.0" text="Transparency:" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="15.0" />
+      <TextField layoutX="184.0" layoutY="11.0" prefWidth="50.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="12.0" />
+   </children>
+</AnchorPane>

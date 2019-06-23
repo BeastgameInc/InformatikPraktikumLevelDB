@@ -3,8 +3,13 @@ package structs;
 
 import org.json.JSONArray;
 
+import levelDBrepack.model.LevelProp;
+
 public class LevelInfoSTR implements Cloneable{
 	public String id;
+	public LevelProp uiLevel;
+	
+	
 	public String getId() {
 		return id;
 	}
