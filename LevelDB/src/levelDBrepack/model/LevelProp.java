@@ -56,15 +56,15 @@ public class LevelProp {
 	}
 	
 	public int  getHeight() {
-		return width.get();
+		return height.get();
 	}
 	
 	public void setHeight(int width) {
-		this.width.set(width);
+		this.height.set(width);
 	}
 	
 	public IntegerProperty heightProperty() {
-		return width;
+		return height;
 	}
 	
 	public String getProps() {

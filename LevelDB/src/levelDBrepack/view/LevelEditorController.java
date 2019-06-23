@@ -34,15 +34,16 @@ public class LevelEditorController {
 		
 		for(int i = 0; i<level.getWidh();i++) {
 			for(int j = 0;j<level.getHeight();j++) {
-				tiles[i][j] = new Canvas(40,40);
+				tiles[i][j] = new Canvas(100,100); //TODO
 				tiles[i][j].getGraphicsContext2D().setFill(Color.BLACK);
 				tiles[i][j].getGraphicsContext2D().fillRect(0, 0, tiles[i][j].getWidth(), tiles[i][j].getHeight());
 				tiles[i][j].getGraphicsContext2D().setFill((Color.WHITE));
 				tiles[i][j].getGraphicsContext2D().fillRect(5, 5, tiles[i][j].getWidth()-10, tiles[i][j].getHeight()-10);
-				tilePane.getChildren().add(tiles[i][j]);
+				tilePane.getChildren().add(tiles[i][j]); 
 			}
 		}
-		tilePane.setPrefColumns(tiles.length);
+		tilePane.setPrefColumns(level.getWidh());
+		tilePane.setPrefRows(level.getHeight());
 	}
 	
 	
