@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ToolBar AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
         <items>
@@ -17,7 +16,6 @@
       </ToolBar>
       <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn prefWidth="91.0" />
           <TableColumn prefWidth="55.0" text="ID" />
             <TableColumn prefWidth="264.0" text="Width" />
             <TableColumn prefWidth="75.0" text="Height" />
