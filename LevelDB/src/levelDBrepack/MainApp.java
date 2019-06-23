@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import levelDBrepack.model.LevelProp;
 import levelDBrepack.view.LevelDialogController;
+import levelDBrepack.view.LevelEditorController;
 import levelDBrepack.view.LevelTableController;
 
 public class MainApp extends Application {
@@ -113,6 +114,9 @@ public class MainApp extends Application {
 			loader.setLocation(MainApp.class.getResource("view/LevelEditor.fxml"));
 			AnchorPane pane = (AnchorPane) loader.load();
 			Scene scene = new Scene(pane);
+			LevelEditorController controller = loader.getController();
+			controller.setLevel(level);
+			controller.initCanvases();
 			primaryStage.setScene(scene);
 		} catch (IOException e) {
 			e.printStackTrace();

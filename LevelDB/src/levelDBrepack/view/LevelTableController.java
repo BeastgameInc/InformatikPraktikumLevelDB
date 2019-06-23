@@ -55,7 +55,7 @@ public class LevelTableController {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.initOwner(mainApp.getPrimaryStage());
 			alert.setTitle("No Selection");
-			alert.setHeaderText("No Person Selected");
+			alert.setHeaderText("No Level Selected");
 			alert.setContentText("Please select a level.");
 			
 			alert.showAndWait();
