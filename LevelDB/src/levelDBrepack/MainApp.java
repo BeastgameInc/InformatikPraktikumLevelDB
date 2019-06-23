@@ -9,9 +9,11 @@ import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import levelDBrepack.model.LevelProp;
+import levelDBrepack.view.LevelDialogController;
 import levelDBrepack.view.LevelTableController;
 
 public class MainApp extends Application {
@@ -75,13 +77,33 @@ public class MainApp extends Application {
 	}
 
 	public Window getPrimaryStage() {
-		// TODO Auto-generated method stub
-		return null;
+		return primaryStage;
 	}
 
-	public boolean showLevelEditDialog(LevelProp tempLevel) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean showLevelEditDialog(LevelProp level) {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(MainApp.class.getResource("view/LevelEditDialog.fxml"));
+	        AnchorPane page = (AnchorPane) loader.load();
+	        
+	        Stage dialogStage = new Stage();
+	        dialogStage.setTitle("Edit Level");
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        dialogStage.initOwner(primaryStage);
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+	        
+	        LevelDialogController controller = loader.getController();
+	        controller.setDialogStage(dialogStage);
+	        controller.setLevel(level);
+	        
+	        dialogStage.showAndWait();
+	        
+	        return controller.isOkClicked();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	
