@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="levelDBrepack.view.LevelDialogController">
    <children>
       <GridPane layoutX="-7.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
@@ -22,12 +21,12 @@
             <Label text="ID" />
             <Label text="Width" GridPane.rowIndex="1" />
             <Label text="Height" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="idField" GridPane.columnIndex="1" />
+            <TextField fx:id="widthField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="heightField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button layoutX="334.0" layoutY="161.0" mnemonicParsing="false" prefWidth="60.0" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-      <Button layoutX="264.0" layoutY="161.0" mnemonicParsing="false" prefWidth="60.0" text="OK" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="80.0" />
+      <Button layoutX="334.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleCancel" prefWidth="60.0" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button layoutX="264.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="60.0" text="OK" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="80.0" />
    </children>
 </AnchorPane>
