@@ -60,7 +60,6 @@ public class LevelEditorController {
 
 	private ImageView activeImage;
 	private File activeFile;
-	private Image activeImageI;
 	private LevelProp level;
 	private MainApp mainApp;
 
