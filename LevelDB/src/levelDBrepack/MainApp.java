@@ -29,10 +29,18 @@ public class MainApp extends Application {
 		// TODO maybe todo constructor for mainApp
 	}
 	
+	
+	/**
+	 * 
+	 * @return Getter for levelData
+	 */
 	public ObservableList<LevelProp> getLevelData() {
 		return levelData;
 	}
 
+	/**
+	 * JavaFX start method. Initializes the RootLayout and shows the table.
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
@@ -43,6 +51,9 @@ public class MainApp extends Application {
 		showLevelTable();
 	}
 
+	/**
+	 * Initializes the RootLayout and shows it.
+	 */
 	public void initRootLayout() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -58,14 +69,15 @@ public class MainApp extends Application {
 		}
 	}
 	
+	/**
+	 * Loads and shows the level-table.
+	 */
 	public void showLevelTable() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/LevelTable.fxml"));
 			AnchorPane levelTable = (AnchorPane) loader.load();
-			//Scene scene = new Scene(levelTable);
 			rootLayout.setCenter(levelTable);
-			//primaryStage.setScene(scene);
 			LevelTableController controller = loader.getController();
 			controller.setMainApp(this);
 		} catch (IOException e) {
@@ -75,14 +87,27 @@ public class MainApp extends Application {
 
 	
 
+	/**
+	 * The Main method which launches the programm.
+	 * @param args Run Arguments
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 
+	/**
+	 * Getter for the PrimaryStage
+	 * @return The PrimaryStage
+	 */
 	public Window getPrimaryStage() {
 		return primaryStage;
 	}
 
+	/**
+	 * Shows the edit level dialog for selected level in tabe.
+	 * @param level The level to edit
+	 * @return If edit was successfull or not
+	 */
 	public boolean showLevelEditDialog(LevelProp level) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -109,6 +134,10 @@ public class MainApp extends Application {
 		}
 	}
 	
+	/**
+	 * Shows the level-editor for selected level.
+	 * @param level The level to edit
+	 */
 	public void showLevelEditor(LevelProp level) {
 		
 		try {
@@ -126,6 +155,11 @@ public class MainApp extends Application {
 		}
 	}
 	
+	/**
+	 * Checks if a level is dublicate in Leveldata list.
+	 * @param level The Level to check
+	 * @return The result of the check
+	 */
 	public boolean idDuplicat(LevelProp level) {
 		for(LevelProp i : levelData) {
 			if(i.idEquals(level) && !i.equals(level)) return true;

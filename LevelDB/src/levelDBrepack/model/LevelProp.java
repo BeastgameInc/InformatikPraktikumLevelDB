@@ -7,6 +7,12 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.canvas.Canvas;
 import levelDBrepack.structs.LevelInfoSTR;
 
+/**
+ * The model-class for a Level
+ * 
+ * @author Timon Lomberg
+ *
+ */
 public class LevelProp {
 
 	private StringProperty id;
@@ -85,10 +91,5 @@ public class LevelProp {
 	public boolean idEquals(LevelProp level) {
 		return this.getID().equals(level.getID());
 	}
-	
-	/*
-	public LevelInfoSTR asInfoSTR() {
-		LevelInfoSTR tmp = new LevelInfoSTR(id.get(), )
-	} */
 	
 }

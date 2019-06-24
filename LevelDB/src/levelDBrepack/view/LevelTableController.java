@@ -8,6 +8,12 @@ import javafx.scene.control.Alert.AlertType;
 import levelDBrepack.MainApp;
 import levelDBrepack.model.LevelProp;
 
+/**
+ * The controller class for the level table
+ * 
+ * @author Timon Lomberg
+ *
+ */
 public class LevelTableController {
 	
 	@FXML
@@ -29,6 +35,9 @@ public class LevelTableController {
 		
 	}
 	
+	/**
+	 * Initializes the table columns
+	 */
 	@FXML
 	private void initialize() {
 		idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty());
@@ -46,6 +55,9 @@ public class LevelTableController {
 		levelTable.setItems(mainApp.getLevelData());
 	}
 	
+	/**
+	 * Handles delete button action
+	 */
 	@FXML
 	private void handleDeleteLevel() {
 		int selectedIndex = levelTable.getSelectionModel().getSelectedIndex();
@@ -62,6 +74,9 @@ public class LevelTableController {
 		}
 	}
 	
+	/**
+	 * Handles new-level button action 
+	 */
 	@FXML
 	private void handleNewLevel() {
 		LevelProp tempLevel = new LevelProp();
@@ -81,6 +96,9 @@ public class LevelTableController {
 		}
 	}
 	
+	/**
+	 * Handles edit-button action
+	 */
 	@FXML
 	private void handleEditLevelProp() {
 		LevelProp selectedLevel = levelTable.getSelectionModel().getSelectedItem();
@@ -113,6 +131,9 @@ public class LevelTableController {
 	    }
 	}
 	
+	/**
+	 * Handles edit-level button action
+	 */
 	@FXML
 	private void handleEditLevel() {
 		LevelProp selectedLevel = levelTable.getSelectionModel().getSelectedItem();

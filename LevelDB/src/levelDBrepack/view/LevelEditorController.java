@@ -23,6 +23,12 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import levelDBrepack.MainApp;
 import levelDBrepack.model.LevelProp;
 
+/**
+ * The controller class for the level editor
+ * 
+ * @author Timon Lomberg
+ *
+ */
 public class LevelEditorController {
 
 	@FXML
@@ -70,6 +76,9 @@ public class LevelEditorController {
 		this.mainApp = mainApp;
 	}
 
+	/**
+	 * Initializes the canvas and draws them
+	 */
 	public void initCanvases() {
 		ma.put(iv0, f0);
 		ma.put(iv1, f1);
@@ -116,14 +125,21 @@ public class LevelEditorController {
 
 	}
 
+	/**
+	 * Handles back button action
+	 */
 	@FXML
 	private void handleBack() {
 		level.tiles = this.tiles;
 		level.setProps(contentAsJSON().toString());
 		mainApp.initRootLayout();
 		mainApp.showLevelTable();
-
 	}
+	
+	/**
+	 * Returns all content of the level as a JSONArray
+	 * @return The JSONArray
+	 */
 	public JSONArray contentAsJSON() {
 		JSONArray arr = new JSONArray();
 		
@@ -141,43 +157,66 @@ public class LevelEditorController {
 	}
 
 
+	/**
+	 * Handles palet item click
+	 */
 	@FXML
 	private void handleC0() {
 		activeImage = iv0;
 		activeFile = ma.get(activeImage);
 	}
+	/**
+	 * Handles palet item click
+	 */
 	@FXML
 	private void handleC1() {
 		activeImage = iv1;
 		activeFile = ma.get(activeImage);
 	}
+	/**
+	 * Handles palet item click
+	 */
 	@FXML
 	private void handleC2() {
 		activeImage = iv2;
 		activeFile = ma.get(activeImage);
 	}
+	/**
+	 * Handles palet item click
+	 */
 	@FXML
 	private void handleC3() {
 		activeImage = iv3;
 		activeFile = ma.get(activeImage);
 	}
+	/**
+	 * Handles palet item click
+	 */
 	@FXML
 	private void handleC4() {
 		activeImage = iv4;
 		activeFile = ma.get(activeImage);
 	}
+	/**
+	 * Handles palet item click
+	 */
 	@FXML
 	private void handleC5() {
 		activeImage = iv5;
 		activeFile = ma.get(activeImage);
 	}
+	/**
+	 * Handles palet item click
+	 */
 	@FXML
 	private void handleC6() {
 		activeImage = iv6;
 		activeFile = ma.get(activeImage);
 	}
 
-
+	/**
+	 * Handles clear button action
+	 */
 	@FXML
 	private void handleClear() {
 		for(int i = 0; i<level.getWidh();i++) {
@@ -190,6 +229,9 @@ public class LevelEditorController {
 		}
 	}
 
+	/**
+	 * Handles setImage button action
+	 */
 	@FXML
 	private void handleSetImage() {
 		try {

@@ -13,6 +13,12 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import levelDBrepack.MainApp;
 import levelDBrepack.model.LevelProp;
 
+/**
+ * The controller class for the root layout
+ * 
+ * @author Timon Lomberg
+ *
+ */
 public class RootLayoutController {
 	
 	MainApp mainApp;
@@ -25,6 +31,9 @@ public class RootLayoutController {
 		this.mainApp = mainApp;
 	}
 	
+	/**
+	 * Handles export menu-item acion
+	 */
 	@FXML
 	public void handleExport() {
 		FileChooser fc = new FileChooser();

@@ -7,6 +7,12 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import levelDBrepack.model.LevelProp;
 
+/**
+ * The controller class for the LevelEditDialog
+ * 
+ * @author Timon Lomberg
+ *
+ */
 public class LevelDialogController {
 	
 	@FXML
@@ -41,6 +47,9 @@ public class LevelDialogController {
 		return okClicked;
 	}
 	
+	/**
+	 * Handles ok Button action
+	 */
 	@FXML
 	private void handleOk() {
 		if(isInputValid()) {
@@ -53,11 +62,18 @@ public class LevelDialogController {
 		}
 	}
 	
+	/**
+	 * Handles cancel button action
+	 */
 	@FXML
 	private void handleCancel() {
 		dialogStage.close();
 	}
 	
+	/**
+	 * Checks if the inputs were valid
+	 * @return Success or not
+	 */
 	private boolean isInputValid() {
 		String errorMessage = "";
 		
