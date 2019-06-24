@@ -69,8 +69,11 @@ public class LevelDialogController {
 		} else {
 			try {
 				Integer.parseInt(widthField.getText());
+				if(Integer.parseInt(widthField.getText())<1) {
+					errorMessage += "Input must be at least 1!\n";
+				}
 			} catch (NumberFormatException e) {
-				errorMessage += "No valid width (must be an integer)!";
+				errorMessage += "No valid width (must be an integer)!\n";
 			}
 		}
 		if(heightField.getText() == null || heightField.getText().length() == 0) {
@@ -84,6 +87,9 @@ public class LevelDialogController {
 			} catch (NumberFormatException e) {
 				errorMessage += "No valid height (must be an integer)!\n";
 			}
+		}
+		if(!level.getProps().isEmpty()) {
+			errorMessage += "Unable to edit level-size of level with content!\n";
 		}
 		if(errorMessage.length() == 0) {
 			return true;
