@@ -22,7 +22,7 @@ public class TestClass {
 	 * Erwarteter Output: Schreiben: {"width":11,"layers":[],"id":"test","height":10,"props":[]} Lesen: test, 11, 10, [], []
 	 */
 	public static void testjson() {
-		LevelInfoSTR test = new LevelInfoSTR("test", 11, 10, new JSONArray(), new JSONArray());
+		LevelInfoSTR test = new LevelInfoSTR("test", 11, 10, new JSONArray());
 		LevelInfoSTR testout = new LevelInfoSTR("");
 
 		try {

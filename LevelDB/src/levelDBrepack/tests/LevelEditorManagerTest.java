@@ -6,9 +6,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import junit.framework.Assert;
 import levelDBrepack.LevelEditorManager;
 import levelDBrepack.structs.TileInfoSTR;
 

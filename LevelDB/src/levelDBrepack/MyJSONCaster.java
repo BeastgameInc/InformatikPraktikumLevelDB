@@ -5,11 +5,9 @@ import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import levelDBrepack.structs.LevelInfoSTR;
 import levelDBrepack.util.Primitives;
 
 public class MyJSONCaster {
@@ -46,7 +44,7 @@ public class MyJSONCaster {
 	 * @throws IllegalArgumentException 
 	 */
 	public static void readJSONIntoObject(String fileUri, Object target) throws JSONException, IOException, IllegalArgumentException, IllegalAccessException {
-		JSONObject jo = new JSONObject(Files.readString(Paths.get(fileUri)));
+		JSONObject jo = new JSONObject(Files.readAllBytes((Paths.get(fileUri))));
 		Field[] vars = target.getClass().getDeclaredFields();
 		for(Field f : vars) {
 			f.set(target, jo.get(f.getName()));

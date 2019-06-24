@@ -85,7 +85,7 @@ public class LevelTableManager {
 	
 	public void loadProgress(String path) {
 		try {
-		JSONObject obj = new JSONObject(Files.readString(Paths.get(path)));
+		JSONObject obj = new JSONObject(Files.readAllBytes(Paths.get(path)));
 		for(int i = 0; i<obj.keySet().size();i++) {
 			LevelInfoSTR tmp = new LevelInfoSTR("#MISSING");
 			MyJSONCaster.readJSONIntoObject(obj.getJSONObject(""+i), tmp);
