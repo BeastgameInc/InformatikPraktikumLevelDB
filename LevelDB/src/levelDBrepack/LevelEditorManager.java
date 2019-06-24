@@ -1,4 +1,4 @@
-package functionell; 
+package levelDBrepack; 
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 
 import org.json.JSONArray;
 
-import structs.TileInfoSTR;
+import levelDBrepack.structs.TileInfoSTR;
 
 public class LevelEditorManager {
 

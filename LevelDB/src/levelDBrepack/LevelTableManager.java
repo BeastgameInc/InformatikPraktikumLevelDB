@@ -1,4 +1,4 @@
-package functionell;
+package levelDBrepack;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import org.json.*;
-import structs.LevelInfoSTR;
+
+import levelDBrepack.structs.LevelInfoSTR;
 
 public class LevelTableManager {
 

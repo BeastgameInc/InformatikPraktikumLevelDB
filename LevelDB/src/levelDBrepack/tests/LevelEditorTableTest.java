@@ -1,4 +1,4 @@
-package testing;
+package levelDBrepack.tests;
 
 import org.junit.Test;
 

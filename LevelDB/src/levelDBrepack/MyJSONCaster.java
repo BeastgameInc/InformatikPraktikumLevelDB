@@ -1,4 +1,4 @@
-package functionell;
+package levelDBrepack;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -9,8 +9,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import structs.LevelInfoSTR;
-import util.Primitives;
+import levelDBrepack.structs.LevelInfoSTR;
+import levelDBrepack.util.Primitives;
 
 public class MyJSONCaster {
 

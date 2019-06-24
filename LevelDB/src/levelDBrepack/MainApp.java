@@ -16,6 +16,7 @@ import levelDBrepack.model.LevelProp;
 import levelDBrepack.view.LevelDialogController;
 import levelDBrepack.view.LevelEditorController;
 import levelDBrepack.view.LevelTableController;
+import levelDBrepack.view.RootLayoutController;
 
 public class MainApp extends Application {
 	
@@ -42,12 +43,13 @@ public class MainApp extends Application {
 		showLevelTable();
 	}
 
-	private void initRootLayout() {
+	public void initRootLayout() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
 			rootLayout = (BorderPane) loader.load();
-			
+			RootLayoutController controller = loader.getController();
+			controller.setMainApp(this);
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -56,14 +58,14 @@ public class MainApp extends Application {
 		}
 	}
 	
-	private void showLevelTable() {
+	public void showLevelTable() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/LevelTable.fxml"));
 			AnchorPane levelTable = (AnchorPane) loader.load();
-			
+			//Scene scene = new Scene(levelTable);
 			rootLayout.setCenter(levelTable);
-			
+			//primaryStage.setScene(scene);
 			LevelTableController controller = loader.getController();
 			controller.setMainApp(this);
 		} catch (IOException e) {
@@ -116,6 +118,7 @@ public class MainApp extends Application {
 			Scene scene = new Scene(pane);
 			LevelEditorController controller = loader.getController();
 			controller.setLevel(level);
+			controller.setMainApp(this);
 			controller.initCanvases();
 			primaryStage.setScene(scene);
 		} catch (IOException e) {
@@ -129,5 +132,6 @@ public class MainApp extends Application {
 		} 
 		return false;
 	}
+	
 	
 }

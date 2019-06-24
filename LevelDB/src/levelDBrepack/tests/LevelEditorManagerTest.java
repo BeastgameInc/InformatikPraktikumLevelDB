@@ -1,4 +1,4 @@
-package testing;
+package levelDBrepack.tests;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -8,9 +8,9 @@ import javax.imageio.ImageIO;
 
 import org.junit.Test;
 
-import functionell.LevelEditorManager;
 import junit.framework.Assert;
-import structs.TileInfoSTR;
+import levelDBrepack.LevelEditorManager;
+import levelDBrepack.structs.TileInfoSTR;
 
 public class LevelEditorManagerTest {
 	LevelEditorManager myLevelEditorManager = new LevelEditorManager();

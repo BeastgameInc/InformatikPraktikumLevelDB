@@ -1,4 +1,4 @@
-package structs;
+package levelDBrepack.structs;
 
 public class TileInfoSTR {
 	

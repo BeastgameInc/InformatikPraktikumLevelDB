@@ -1,14 +1,14 @@
-package testing;
+package levelDBrepack.tests;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import functionell.MyJSONCaster;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import structs.LevelInfoSTR;
+import levelDBrepack.MyJSONCaster;
+import levelDBrepack.structs.LevelInfoSTR;
 
 public class TestClass {
 	

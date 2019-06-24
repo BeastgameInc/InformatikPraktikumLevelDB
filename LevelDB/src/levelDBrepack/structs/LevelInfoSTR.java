@@ -1,14 +1,15 @@
-package structs;
+package levelDBrepack.structs;
 
 
 import org.json.JSONArray;
 
-import levelDBrepack.model.LevelProp;
 
 public class LevelInfoSTR implements Cloneable{
 	public String id;
-	public LevelProp uiLevel;
-	
+	public int width = 1;
+	public int height = 1;
+	public JSONArray props;
+
 	
 	public String getId() {
 		return id;
@@ -34,25 +35,15 @@ public class LevelInfoSTR implements Cloneable{
 	public void setProps(JSONArray props) {
 		this.props = props;
 	}
-	public JSONArray getLayers() {
-		return layers;
-	}
-	public void setLayers(JSONArray layers) {
-		this.layers = layers;
-	}
 
-	public int width = 1;
-	public int height = 1;
-	public JSONArray props;
-	public JSONArray layers;
-	
-	public LevelInfoSTR(String id, int width, int height, JSONArray props, JSONArray layers) {
+
+		
+	public LevelInfoSTR(String id, int width, int height, JSONArray props) {
 		super();
 		this.id = id;
 		this.width = width;
 		this.height = height;
 		this.props = props;
-		this.layers = layers;
 	}
 	public LevelInfoSTR(String id) {
 		super();
@@ -62,13 +53,13 @@ public class LevelInfoSTR implements Cloneable{
 	@Override
 	public String toString() {
 		
-		return id + ", " + width + ", " + height + ", " + props + ", " + layers;
+		return id + ", " + width + ", " + height + ", " + props;
 		
 	}
 	
 	public LevelInfoSTR clone()
 	{
-		return new LevelInfoSTR(this.id, this.width, this.height, this.props, this.layers);
+		return new LevelInfoSTR(this.id, this.width, this.height, this.props);
 	}
 	
 	

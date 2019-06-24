@@ -4,7 +4,8 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import structs.LevelInfoSTR;
+import javafx.scene.canvas.Canvas;
+import levelDBrepack.structs.LevelInfoSTR;
 
 public class LevelProp {
 
@@ -13,12 +14,14 @@ public class LevelProp {
 	private IntegerProperty height;
 	private StringProperty props;
 	
-	private LevelInfoSTR levelSTR;
+	
+	public Canvas[][] tiles;
 	
 	public LevelProp(String id, int width, int height) {
 		this.id = new SimpleStringProperty(id);
 		this.width = new SimpleIntegerProperty(width);
 		this.height = new SimpleIntegerProperty(height);
+		this.props = new SimpleStringProperty("");
 	}
 	
 	public LevelProp(LevelInfoSTR levelSTR) {
@@ -72,7 +75,7 @@ public class LevelProp {
 	}
 	
 	public void setProps(String props) {
-		this.props.set(props );
+		this.props.set(props);
 	}
 	
 	public StringProperty propsProperty() {
@@ -82,5 +85,10 @@ public class LevelProp {
 	public boolean idEquals(LevelProp level) {
 		return this.getID().equals(level.getID());
 	}
+	
+	/*
+	public LevelInfoSTR asInfoSTR() {
+		LevelInfoSTR tmp = new LevelInfoSTR(id.get(), )
+	} */
 	
 }
